@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Diary</title>
+    <link type="text/css" rel="stylesheet" href="layout.css"></link>
+    <!-- 외부 달력.js -->
+    <script src="calendar.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- 헤더부분 -->
+        <header>
+            <h2>Calendar</h2>
+            
+        </header>
+        <!-- 메뉴부분 -->
+        <nav>
+            
+            <div id="menu">
+                <ul>
+                    <li><a href="main.html" target="_self">Home</a></li>
+                    <li><a href="calendar.html" target="_self">달력보기</a></li>
+                    <li><a href="map.html" target="_self">지도보기</a></li>
+                    <li><a href="#input">정보입력공간</a></li>
+                  </ul>
+            </div>
+        </nav>
+        <!-- 섹션 부분 -->
+        <section>
+            <div class="left">
+                <p>섹션 1</p>  
+                            
+            </div>
+            <div class="right">
+                <!-- 달력 테이블 만들기 (id이름 calendar)-->
+                <table id="calendar" align="center">
+                    <thead>
+                      <tr class="calendar schema"> <!--달력 앞 뒤로 움직이는 라벨, 현재 년,월찍는 달력 행-->
+                        <td>
+                          <label id="prev" onclick="preCalendar()">
+                              &#60; 
+                          </label>
+                        </td>
+                        <td align="center" id="current-year-month" colspan="5"></td>
+                        <td>
+                          <label id="next" onclick="next()">
+                              &#62;
+                          </label>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td class = "sun" align="center">Sun</td>
+                          <td align="center">Mon</td>
+                          <td align="center">Tue</td>
+                          <td align="center">Wed</td>
+                          <td align="center">Thu</td>
+                          <td align="center">Fri</td>
+                          <td class= "sat" align="center">Sat</td>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body" class="calendar-body"></tbody>
+                  </table>
+            </div>
+        </section>
+
+        <!-- footer 부분 -->
+        <footer>
+            <h2>FOOTER 영역</h2>
+            <p id = "d1"></p>
+        </footer>
+    </div>
+    <script src ="calendar.js"></script>
+</body>
+
+</html>
