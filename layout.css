@@ -8,7 +8,7 @@ body,html, div {
     height: 100%;
 }
 
-div #wrapper {
+div.wrapper {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -37,7 +37,7 @@ header,nav, footer {
 }
 
 header {
-    height: 10%;
+    height: 15%;
     background-color:moccasin;
     text-align: center;
 }
@@ -82,7 +82,7 @@ section {
 }
 
 footer {
-    height: 10%;
+    height: 15%;
     background-color: coral;
     position: relative;
     clear: both; /*clear:both하면 밑으로 내려감*/

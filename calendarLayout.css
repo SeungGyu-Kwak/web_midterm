@@ -1,0 +1,207 @@
+    html, body{
+        background-color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* 부모태그들을 모두 100%으로 준다. */
+    body,html, div {
+        width: 100%;
+        height: 100%;
+        /* background-color: white; */
+    }
+
+    div #wrapper {
+        width: 100%;
+        /* height: 100%; */
+        text-align: center;
+        margin: 0 auto;
+        border: 4px solid rgba(161, 161, 161, 0.5); 
+    
+    }
+    section {
+        width: 100%;
+        height: 80%;
+        background-color:peru;
+        text-align: center;
+    }
+    div.left {
+        width: 50%;
+        float: left;
+        box-sizing: border-box;
+        background-color:peru;
+        border: 1px solid black;
+    }
+    div.today{
+        text-align: center;
+        /* padding: 30px; */
+        width: 100%;
+        height: 40%;
+        padding: 20px 0 0 0;
+    }
+    .day{
+        width: 100%;
+        height: 10%;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .date{
+        width: 100%;
+        height: 20%;
+        font-size: 120px;
+        font-weight: bold;
+        /* margin: 20px 0; */
+    }
+    div.todo-list{
+        width: 100%;
+        height: 60%;
+        /* padding: 0 0 0 40px; */
+    }
+    .todo-title{
+        width: 100%;
+        height: 10%;
+        font-size: 30px;
+        /* font-weight: 100; */
+    }
+    .input-wrapper{
+        width: 100%;
+        height: 100%;
+    }
+    /* 할일 적는 class */
+    .input-data{ 
+        width: 70%;
+        /* margin-right: 20px; */
+        height: 10%; 
+        font-size: 20px;
+        background: #0b0809;
+        color: #ddaf35;
+        border: 1px solid; 
+        border-bottom: 1px solid #ddaf35;; 
+        border-radius: 10px; 
+        
+      }
+      /* 할일을 적고 버튼 누르는 클래스 */
+    .input-button{
+        cursor: pointer;
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px 0 10px 0;
+        background: #ddaf35;
+        border: 1px solid;
+        color: #0b0809;
+        border-radius: 20px;
+    }
+    .input-button:hover{
+        background: #ffffff;
+        color: #0b0809;
+    }
+    /* 할일들이 저장되는 리스트 */
+    .input-list > div{
+        font-size: 10px;
+        width: 60%;
+        float: left;
+        color: #ddaf35;
+    }
+    .input-list > .checked{
+        color: #FFFFFF;
+        text-decoration:line-through
+    }
+
+    div.right {
+        width: 50%; 
+        box-sizing: border-box;
+        background-color:peru;
+        border: 1px solid black;
+        display: inline-block;
+    }
+    #calendar {
+        width : 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0 auto; 
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #preCalendar,#nextCalendar {
+        cursor: pointer;
+    }
+    tr,td {
+        padding: auto;
+        /* cursor: pointer; */
+    }
+    .active{
+        background: #0b0809;
+        border-radius: 50%;
+        color: #ffffff;
+      }
+    .today-day{
+        background: green; 
+        border-radius: 50%;
+        color: #ffffff;
+    }
+    .sun{
+        color:#ef3333;
+    }
+    .sat{
+        color:#2107e0;
+    }
+    header,nav, footer {
+        border: 1px solid black;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    header {
+        width: 100%;
+        height: 15%;
+        background-color:moccasin;
+        text-align: center;
+    }
+    #title {
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 25px;
+        text-align: center;
+        font-size: 50px;
+    }
+    #menu {
+        width: 100%;
+    } 
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+    }
+    
+    ul:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    
+    li a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+    }
+    
+    /* 마우스 올리면 색깔이 변하도록하기 */
+    li a:hover {
+        background-color:#4CAF50;
+    }
+    
+    
+    footer {
+        height: 15%;
+        background-color: coral;
+        position: relative;
+        clear: both; /*clear:both하면 밑으로 내려감*/
+    }
+    
