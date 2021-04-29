@@ -56,7 +56,7 @@
     }
     div.todo-list{
         width: 100%;
-        height: 60%;
+        height: 40%;
         /* padding: 0 0 0 40px; */
     }
     .todo-title{
@@ -99,16 +99,28 @@
     }
     /* 할일들이 저장되는 리스트 */
     .input-list > div{
-        font-size: 10px;
+        font-size: 30px;
         width: 60%;
+        height: 10%;
         float: left;
-        color: #ddaf35;
+        color: black;
+        text-align: center;
     }
     .input-list > .checked{
         color: #FFFFFF;
-        text-decoration:line-through
+        text-decoration:line-through;
     }
-
+    .del-data{
+        display: block;
+        color: black;
+        float: left;
+        width: 5%;
+        cursor: pointer;
+        font-size: 20px;
+        background: peru;
+        border: none;
+        border-radius: 25px;
+      }
     div.right {
         width: 50%; 
         box-sizing: border-box;
@@ -170,20 +182,20 @@
     #menu {
         width: 100%;
     } 
-    ul {
+    ul.ul-menu {
         list-style-type: none;
         margin: 0;
         padding: 0;
         background-color: #333;
     }
     
-    ul:after {
+    ul.ul-menu:after {
         content: '';
         display: block;
         clear: both;
     }
     
-    li a {
+    .ul-menu > li a {
         float: left;
         display: block;
         color: white;
@@ -193,15 +205,26 @@
     }
     
     /* 마우스 올리면 색깔이 변하도록하기 */
-    li a:hover {
+    .ul-menu > li a:hover {
         background-color:#4CAF50;
     }
     
     
     footer {
-        height: 15%;
+        height: 5%;
         background-color: coral;
         position: relative;
         clear: both; /*clear:both하면 밑으로 내려감*/
     }
-    
+    .ul-footer {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    footer > ul {
+        overflow: hidden;
+    }
+    footer > ul > li {
+        float: left;
+        padding : 0 20px 0 0;
+    }

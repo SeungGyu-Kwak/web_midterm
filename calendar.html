@@ -21,11 +21,11 @@
         <!-- 메뉴부분 -->
         <nav>
             <div class="menu">
-                <ul>
+                <ul class= "ul-menu">
                     <li><a href="main.html" target="_self">Home</a></li>
                     <li><a href="calendar.html" target="_self">달력보기</a></li>
-                    <li><a href="map.html" target="_self">지도보기</a></li>
-                    <li><a href="#input">정보입력공간</a></li>
+                    <!-- <li><a href="map.html" target="_self">지도보기</a></li>
+                    <li><a href="#input">정보입력공간</a></li> -->
                   </ul>
             </div>
         </nav>
@@ -38,7 +38,7 @@
                     <div class="date" id = "date"></div>
                 </div> 
                 <div class="todo-list">
-                    <div class="todo-title">오늘의 할 일</div>
+                    <div class="todo-title">To do List</div>
                     <div class="input-wrapper">
                         <input type = "text" placeholder=" 할 일을 적어보세요" id="input-data" class="input-data">
                         <button type="button" id="input-button" class="input-button">입력</button>
@@ -79,8 +79,12 @@
 
         <!-- footer 부분 -->
         <footer>
-            <h2>FOOTER 영역</h2>
-            <p id = "d1"></p>
+            <ul class = "ul-footer">
+                <li id = "question"><a href="#">의견 보내기</a></li>
+                <li id = "information"><a href="#">안내사항</a></li>
+                <li id="phone"><a href="#">전화번호</a></li>
+                <li><a href="#"></a></li>
+            </ul>
         </footer>
     </div>
     <script src ="calendar.js"></script>

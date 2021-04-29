@@ -5,48 +5,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Diary</title>
+    <title>Couple Diary</title>
     <link type="text/css" rel="stylesheet" href="layout.css"></link>
+    <script src = "main.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <!-- 헤더부분 -->
         <header>
-            <h2>카페다이어리</h2>
+            <h2 id = "title">커플 다이어리</h2>
         </header>
         <!-- 메뉴부분 -->
         <nav>
             <div class="menu">
-                <ul>
+                <ul class='ul-menu'>
                     <li><a href="main.html" target="_self">Home</a></li>
                     <li><a href="calendar.html" target="_self">달력보기</a></li>
-                    <li><a href="map.html" target="_self">지도보기</a></li>
-                    <li><a href="#input">정보입력공간</a></li>
+                    <!-- <li><a href="map.html" target="_self">지도보기</a></li>
+                    <li><a href="#input">정보입력공간</a></li> -->
                   </ul>
+              
             </div>
         </nav>
         <!-- 섹션 부분 -->
         <section>
+            
             <div class="left">
-                <p>
-                    섹션 1
-                </p>
+                <div class="left-box">
+                    <a href="http://www.instagram.com/yez1_9yu" target="_blank">
+                        <img src="woman.jpeg" class="woman" id ="woman">
+                    </a>
+                </div>
+                <div class="profile">
+                    <table class="w-profile">
+                        <tr>
+                            <td>이름</td>
+                            <td>이예지</td>
+                        </tr>
+                        <tr>
+                            <td>생년월일</td>
+                            <td>1998.7.10</td>
+                        </tr>
+                        <tr>
+                            <td>직업</td>
+                            <td>간호사</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class = "middle">
+                <div class = "heart">
+                    <img src="하트.png" class='heart'>
+                </div>
+                <div class = "d-day">
+                    <h3>처음 만난 날</h3>
+                    <div class = 'love-day' id = 'love-day'></div>
+                    <div class = 'birthday' id = 'birthday'>
+                        <h5 class = 'w-birthday' id = 'w-birthday'></h5>
+                        <h5 class = 'm-birthday' id = 'm-birthday'></h5>
+                    </div>
+                </div>
             </div>
             <div class="right">
-                <p>
-                    섹션 2
-                </p>
-                
+                <div class="right-box">
+                    <a href="http://www.instagram.com/9yu_yez1" target="_blank">
+                        <img src="man.jpeg" class="man"></img>
+                    </a>
+                </div> 
+                <div class="profile">
+                    <table class="m-profile">
+                        <tr>
+                            <td>이름</td>
+                            <td>곽승규</td>
+                        </tr>
+                        <tr>
+                            <td>생년월일</td>
+                            <td>1998.9.12</td>
+                        </tr>
+                        <tr>
+                            <td>직업</td>
+                            <td>대학생</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </section>
 
         <!-- footer 부분 -->
         <footer>
-            <h2>FOOTER 영역</h2>
+            <ul class = "ul-footer">
+                <li id = "question"><a href="#">의견 보내기</a></li>
+                <li id = "information"><a href="#">안내사항</a></li>
+                <li id="phone"><a href="#">전화번호</a></li>
+                <li><a href="#"></a></li>
+            </ul>
         </footer>
     </div>
-
+    <script src = "main.js"></script>
 </body>
 
 </html>

@@ -1,29 +1,142 @@
+html, body{
+    background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
 * {
     margin: 0;
     padding: 0;
 }
 /* 부모태그들을 모두 100%으로 준다. */
-body,html, div {
+body,html, div ,img{
     width: 100%;
     height: 100%;
 }
 
 div.wrapper {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     text-align: center;
     margin: 0 auto;
+    border: 4px solid rgba(161, 161, 161, 0.5); 
 
 }
+section {
+    width: 100%;
+    height: 80%;
+    background-color:peru;
+    text-align: center;
+}
+div.middle {
+    width: 20%;
+    float: left;
+    box-sizing: border-box;
+    background-color:peru;
+    /* background-color: lightseagreen; */
+    border: 1px solid black;
+}
+.heart{
+    width: 60%;
+    height: 40%;
+    text-align: center;
+    /* background: lightseagreen; */
+    padding: 40px 0px 0px 0px;
+    vertical-align: middle;
+    margin: auto;
+}
+.d-day {
+    width: 100%;
+    height: 60%;
+}
+
+.love-day {
+    width: 100%;
+    height: 20%;
+    font-size: 30px;
+    font-weight: bold;
+    /* line-height: 50px; */
+}
+
+.birthday {
+    width: 100%;
+    height: 40%;
+    font-size: 20px;
+    line-height: 30px;
+}
+
 div.left {
-    width: 50%;
+    width: 40%;
     float: left;
     box-sizing: border-box;
     background-color:peru;
     border: 1px solid black;
 }
-div.right {
+div.left-box{
+    text-align: center;
     width: 50%;
+    height: 50%;
+    /* padding: 20px 0 0 0; */
+    border-radius: 70%;
+    overflow: hidden;
+    margin: 0 auto;
+    background: url('womanhover.jpeg');
+    background-size: 100% 100%;
+}
+
+ .left-box img {
+    width:100%; 
+    height:100%;
+    border:0px; 
+    display:block; 
+    object-fit: cover;
+    text-align: center;
+    margin: auto;
+    transition: opacity 1s; 
+}
+.left-box:hover img:last-child { 
+    opacity: 0.0;
+    cursor: pointer;
+} 
+
+div.right-box{
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    /* padding: 20px 0 0 0; */
+    border-radius: 70%;
+    overflow: hidden;
+    margin: 0 auto;
+    background: url('manhover.jpeg');
+    background-size: 100% 100%;
+}
+
+ .right-box img {
+    width:100%; 
+    height:100%;
+    border:0px; 
+    display:block; 
+    object-fit: cover;
+    text-align: center;
+    margin: auto;
+    transition: opacity 1s; 
+}
+.right-box:hover img:last-child { 
+    opacity: 0.0;
+    cursor: pointer;
+    
+} 
+
+div.profile {
+    width: 100%;
+    height: 40%;
+    /* float: left; */
+    margin: 10px 0px 0px 0px;
+    /* position: absolute; */
+    text-align: center;
+    background:lightsalmon;
+}
+
+div.right {
+    width: 40%;
     float: right;
     box-sizing: border-box;
     background-color:peru;
@@ -41,25 +154,33 @@ header {
     background-color:moccasin;
     text-align: center;
 }
-
+#title {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    font-size: 50px;
+}
 #menu {
     width: 100%;
     
-} 
-ul {
+}
+
+ul.ul-menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
     background-color: #333;
 }
 
-ul:after {
+ul.ul-menu:after {
     content: '';
     display: block;
     clear: both;
 }
 
-li a {
+.ul-menu > li a {
     float: left;
     display: block;
     color: white;
@@ -69,21 +190,42 @@ li a {
 }
 
 /* 마우스 올리면 색깔이 변하도록하기 */
-li a:hover {
+.ul-menu > li a:hover {
     background-color:#4CAF50;
 }
 
 
-section {
-    width: 100%;
-    height: 80%;
-    background-color:peru;
-    text-align: center;
-}
-
 footer {
-    height: 15%;
+    height: 5%;
     background-color: coral;
     position: relative;
     clear: both; /*clear:both하면 밑으로 내려감*/
+}
+.ul-footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+footer > ul {
+    overflow: hidden;
+}
+footer > ul > li {
+    float: left;
+    padding : 0 20px 0 0;
+}
+.m-profile {
+    width : 50%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto; 
+    font-size: 20px;
+    font-weight: bold;
+}
+.w-profile {
+    width : 50%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto; 
+    font-size: 20px;
+    font-weight: bold;
 }

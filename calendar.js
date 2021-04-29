@@ -14,6 +14,18 @@ var pageFirst = firstMonth; //pageFirst에 first객체 저장 pageFirst에는 �
 var pageYear, clickedDate;
 var tdGroup = []; //month의 날짜들을 담을 배열 객체 생성
 
+//todo 리스트 만들기
+
+var inputBox = document.getElementById('input-data'); //id가 input-data인 것을 inputBox객체에 저장 
+var inputDate = document.getElementById('input-button');
+var inputList = document.getElementById('input-list');
+var delText = 'X';
+inputDate.addEventListener('click',addTodoList); //inputDate(버튼)를 클릭하면 addTodoList함수 실행
+var dataCnt = 1;
+var keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate(); //오늘의 날짜를 키 값으로 준다. 
+var todoList = []; //todoList 배열 생성
+todoList[keyValue] = [];
+
 function showCalendar(){ //달력 출력 메소드 
     var firstMonth = new Date(today.getFullYear(), today.getMonth(),1); //이번(현재) 달의 첫째 날 객체 생성 후 first에 저장
     currentTitle.innerHTML = firstMonth.getFullYear()+"년"+ '&nbsp;&nbsp;&nbsp;&nbsp'+ monthList[firstMonth.getMonth()];
@@ -68,6 +80,9 @@ function showCalendar(){ //달력 출력 메소드
 
 showCalendar(); //달력출력하기
 showMain();
+reshowingList();
+
+
 // clickedDate = document.getElementById(today.getDate());
 // clickedDate.classList.add('active');
 //
@@ -84,15 +99,16 @@ function removeCalendar(){
 
 //이전 달을 출력하기 위한 메소드 
 function preCalendar(){
-    // inputBox.value = "";
-    // const $divs = document.querySelectorAll('#input-list > div');
-    // $divs.forEach(function(e){
-    //   e.remove();
-    // });
-    // const $btns = document.querySelectorAll('#input-list > button');
-    // $btns.forEach(function(e1){
-    //   e1.remove();
-    // });
+    inputBox.value = "";
+    document.getElementById('input-data').value = "";
+    const $divs = document.querySelectorAll('#input-list > div');
+    $divs.forEach(function(e){
+      e.remove();
+    });
+    const $btns = document.querySelectorAll('#input-list > button');
+    $btns.forEach(function(e1){
+      e1.remove();
+    });
     
     today = new Date(today.getFullYear(), today.getMonth()-1, today.getDate()); //today를 재 설정해준다.
     
@@ -102,20 +118,20 @@ function preCalendar(){
     clickedDate = document.getElementById(today.getDate());
     clickedDate.classList.add('active');
     showMain();
-    // reshowingList();
+    reshowingList();
 }
 
 //다음 달 출력해주는 메소드 
 function nextCalendar(){
-    // inputBox.value = "";
-    // const $divs = document.querySelectorAll('#input-list > div');
-    // $divs.forEach(function(e){
-    //   e.remove();
-    // });
-    // const $btns = document.querySelectorAll('#input-list > button');
-    // $btns.forEach(function(e1){
-    //   e1.remove();
-    // });
+    document.getElementById('input-data').value = "";
+    const $divs = document.querySelectorAll('#input-list > div');
+    $divs.forEach(function(e){
+      e.remove();
+    });
+    const $btns = document.querySelectorAll('#input-list > button');
+    $btns.forEach(function(e1){
+      e1.remove();
+    });
     
 
     today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
@@ -125,7 +141,7 @@ function nextCalendar(){
     clickedDate = document.getElementById(today.getDate());
     clickedDate.classList.add('active');
     showMain();
-    // reshowingList();
+    reshowingList();
 }
 
 function showMain(){
@@ -146,4 +162,117 @@ function changeToday(e){
     showMain(); // 왼쪽 섹션 업데이트 
     keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate();
     reshowingList();
+}
+
+
+dataCnt = 1
+//todoList에 할일 추가하는 메소드 
+function addTodoList(){
+    var $div = document.createElement('div'); //div 태그 생성
+    $div.textContent = '-' + inputBox.value; //div태그에 input태그에 적은 내용 추가
+    var $btn = document.createElement('button'); //$btn 객체 생성
+    $btn.setAttribute('type', 'button'); //$btn type에 type=button추가
+    $btn.setAttribute('id', 'del-ata'); //$btn id에 id= del-ata추가 
+    $btn.setAttribute('id', dataCnt+keyValue); // $btn id에 dataCnt+keyValue 추가 
+    $btn.setAttribute('class', "del-data"); //$btn class에 class = del-data 추가.
+    $btn.textContent = delText; //$btn에 delText = X 넣어준다. 즉, 버튼(X)만든다는 것. 
+    $div.setAttribute('id', dataCnt+keyValue);
+    inputList.appendChild($div); //inputList에(할일 리스트)에 div태그 추가
+    inputList.appendChild($btn); //inputList에 btn태그 추가. 
+    todoList[keyValue].push(inputBox.value); //todoList[keyValue]에 현재 적은 할일 추가한다. 
+    dataCnt++; 
+    inputBox.value = ''; //다시 inputBox에 공백으로 바꿔준다. 
+    $div.addEventListener('click',checkList); //div를 클릭하면 checkList함수 실행 
+    $btn.addEventListener('click',deleteTodo); //btn를 클릭하면 deleteTodo함수 실행
+    function deleteTodo(){
+        $div.remove();
+        $btn.remove();
+    }
+}
+
+
+
+//현재 업데이트된 날짜의 todo리스트를 출력해주는 메소드
+function reshowingList(){
+    dataCnt = 1;
+    keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate(); //keyValue값 설정 
+
+    //keyValue값을 인덱스로 하는 배열이 값이 없다면.
+    if(todoList[keyValue] === undefined){
+        inputList.textContent = '';
+        todoList[keyValue] = [];
+        //div태그에 있는 값 다 지움
+        const $divs = document.querySelectorAll('#input-list > div');
+        $divs.forEach(function(e){
+          e.remove();
+        });
+        const $btns = document.querySelectorAll('#input-list > button');
+        $btns.forEach(function(e1){
+          e1.remove();
+        });
+    }else if(todoList[keyValue].length ===0){
+        inputList.textContent = '';
+        const $divs = document.querySelectorAll('#input-list > div');
+        $divs.forEach(function(e){
+          e.remove();
+        });
+        const $btns = document.querySelectorAll('#input-list > button');
+        $btns.forEach(function(e1){
+          e1.remove();
+        });
+    }else{
+        const $divs = document.querySelectorAll('#input-list > div');
+        $divs.forEach(function(e){
+          e.remove();
+        });
+        const $btns = document.querySelectorAll('#input-list > button');
+        $btns.forEach(function(e1){
+          e1.remove();
+        });
+        //addtodo 메소드와 동일한 알고리즘. 
+        var $div = document.createElement('div'); //div태그 생성. 
+        for(var i = 0; i < todoList[keyValue].length; i++){
+            var $div = document.createElement('div'); //div태그 생성. 
+            $div.textContent = '-' + todoList[keyValue][i];
+            var $btn = document.createElement('button');
+            $btn.setAttribute('type', 'button'); 
+            $btn.setAttribute('id', 'del-ata');
+            $btn.setAttribute('id', dataCnt+keyValue);
+            $div.setAttribute('id', dataCnt+keyValue);
+            $btn.setAttribute('class', 'del-data');
+            $btn.textContent = delText;
+            inputList.appendChild($div);
+            inputList.appendChild($btn);
+            $div.addEventListener('click',checkList);
+            $btn.addEventListener('click',deleteTodo);
+            inputBox.value = '';
+            dataCnt++; 
+            function deleteTodo(){
+                $div.remove();
+                $btn.remove();
+            }
+        }
+    }
+}
+
+function checkList(e){
+    e.currentTarget.classList.add('checked');
+}
+
+var phone = document.getElementById('phone');
+var question = document.getElementById('question');
+var information = document.getElementById('information');
+
+phone.addEventListener('click', alertPhone);
+question.addEventListener('click',Question);
+information.addEventListener('click',Info);
+
+function alertPhone() {
+    alert('대표번호 : '+'010-3168-0742');
+}
+function Question() {
+    prompt('문의할 내용을 입력하세요','000 기능을 문의합니다.');
+}
+function Info(){
+    alert('이 사이트는 커플들의 일정을 관리해주기 위한 사이트입니다.')
 }
