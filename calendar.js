@@ -72,15 +72,16 @@ function showCalendar(){ //달력 출력 메소드
         calendarBody.appendChild($tr); //calendarBody에 자식태그를 추가한다. 즉, 한 주<tr>씩 추가한다. 
     }
     //현재 출력되는 달의 모든 날짜에 click이벤트 걸어주기
-    for(let i = 1; i <= pageYear[today.getMonth()]; i++){ //현재 달의 1일부터 그 달의 마지막 날까지 for문 돌기
-        tdGroup[i] = document.getElementById(i); //배열안에는 id=i 를 가진 것이 들어감.
-        tdGroup[i].addEventListener('click',changeToday); //모든 날짜에 click이라는 이벤트가 실행될 때마다 changeToday함수 실행.
+    for(var k = 1; k <= pageYear[today.getMonth()]; k++){ //현재 달의 1일부터 그 달의 마지막 날까지 for문 돌기
+        tdGroup[k] = document.getElementById(k); //배열안에는 id=i 를 가진 것이 들어감.
+        tdGroup[k].addEventListener('click',changeToday); //모든 날짜에 click이라는 이벤트가 실행될 때마다 changeToday함수 실행.
     }
 }
 
 showCalendar(); //달력출력하기
 showMain();
 reshowingList();
+
 
 
 // clickedDate = document.getElementById(today.getDate());
@@ -119,6 +120,7 @@ function preCalendar(){
     clickedDate.classList.add('active');
     showMain();
     reshowingList();
+    
 }
 
 //다음 달 출력해주는 메소드 
@@ -142,6 +144,7 @@ function nextCalendar(){
     clickedDate.classList.add('active');
     showMain();
     reshowingList();
+   
 }
 
 function showMain(){
@@ -149,9 +152,10 @@ function showMain(){
     TodayDate.innerHTML = today.getDate();//오른쪽 섹션에 현재 날짜 출력
 }
 
+
 //왼쪽 섹션에 날짜 바꿔주는 메소드 
 function changeToday(e){
-    for(let i = 1; i <= pageYear[today.getMonth()]; i++){  //현재 달의 1일부터 그 달의 마지막 날까지 for문 돌기
+    for(var i = 1; i <= pageYear[today.getMonth()]; i++){  //현재 달의 1일부터 그 달의 마지막 날까지 for문 돌기
         if(tdGroup[i].classList.contains('active')){ //각 날짜에 class가 active값이 있는지 체크 (true/false)
             tdGroup[i].classList.remove('active'); //class='active'가 있다면 class 제거함. 
         }

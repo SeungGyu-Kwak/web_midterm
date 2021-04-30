@@ -5,53 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Diary</title>
-    <!-- <link type="text/css" rel="stylesheet" href="layout.css"></link> -->
-    <link type="text/css" rel="stylesheet" href="calendarLayout.css"></link>
-    <!-- 외부 달력.js -->
-    <script src="calendar.js"></script>
+    <title>Map</title>
+    <link type="text/css" rel="stylesheet" href="AlbumLayout.css"></link>
+    <script src="Album.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
         <!-- 헤더부분 -->
         <header>
-            <h2 id = "title">Calendar</h2>
+            <h2 id = "hi">달력앨범</h2>
         </header>
         <!-- 메뉴부분 -->
         <nav>
             <div class="menu">
-                <ul class= "ul-menu">
+                <ul class='ul-menu'>
                     <li><a href="main.html" target="_self">Home</a></li>
                     <li><a href="calendar.html" target="_self">달력보기</a></li>
                     <li><a href="Album.html" target="_self">앨범보기</a></li>
                     <!-- <li><a href="#input">정보입력공간</a></li> --> 
                   </ul>
+              
             </div>
         </nav>
         <!-- 섹션 부분 -->
         <section>
-            <div class="left">
-                <div class="today">
-                    <!-- <h2>현재 날짜</h2> -->
-                    <div class="day" id = "day"></div>
-                    <div class="date" id = "date"></div>
-                </div> 
-                <div class="todo-list">
-                    <div class="todo-title"><h3>To Do List</h3></div>
-                    <div class="input-wrapper">
-                        <input type = "text" placeholder=" 할 일을 적어보세요" id="input-data" class="input-data">
-                        <button type="button" id="input-button" class="input-button">입력</button>
-                        <div id="input-list" class="input-list"></div>
-                    </div>
-                </div>               
-            </div>
-            <div class="right">
-                <!-- 달력 테이블 만들기 (id이름 calendar)-->
-                <table id="calendar" align="center">
+            <div class="calendar-album">
+                 <!-- 달력 테이블 만들기 (id이름 calendar)-->
+                 <table id="calendar" align="center">
                     <thead>
-                      <tr class="calendar schema"> <!--달력 앞 뒤로 움직이는 라벨, 현재 년,월찍는 달력 행-->
+                      <tr class="calendar_schema"> <!--달력 앞 뒤로 움직이는 라벨, 현재 년,월찍는 달력 행-->
                         <td>
                           <label id="preCalendar" onclick="preCalendar()">
                             &#60; 
@@ -76,6 +60,7 @@
                     <tbody id="calendar-body" class="calendar-body"></tbody>
                   </table>
             </div>
+                
         </section>
 
         <!-- footer 부분 -->
@@ -88,7 +73,7 @@
             </ul>
         </footer>
     </div>
-    <script src ="calendar.js"></script>
-</body>
 
+    <script src="Album.js"></script>
+</body>
 </html>

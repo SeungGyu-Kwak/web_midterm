@@ -23,14 +23,14 @@ div.wrapper {
 section {
     width: 100%;
     height: 80%;
-    background-color:peru;
+    background-color:#FAD0C9;
     text-align: center;
 }
 div.middle {
     width: 20%;
     float: left;
     box-sizing: border-box;
-    background-color:peru;
+    background-color:#FAD0C9;
     /* background-color: lightseagreen; */
     border: 1px solid black;
 }
@@ -67,7 +67,7 @@ div.left {
     width: 40%;
     float: left;
     box-sizing: border-box;
-    background-color:peru;
+    background-color:#FAEBEF;
     border: 1px solid black;
 }
 div.left-box{
@@ -122,24 +122,25 @@ div.right-box{
 .right-box:hover img:last-child { 
     opacity: 0.0;
     cursor: pointer;
-    
+
 } 
 
 div.profile {
-    width: 100%;
+    width: 70%;
     height: 40%;
     /* float: left; */
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0px 0px 85px;
     /* position: absolute; */
     text-align: center;
     background:lightsalmon;
+    border-radius: 50px;
 }
 
 div.right {
     width: 40%;
     float: right;
     box-sizing: border-box;
-    background-color:peru;
+    background-color:#FAEBEF;
     border: 1px solid black;
 }
 
@@ -150,15 +151,15 @@ header,nav, footer {
 }
 
 header {
-    height: 15%;
-    background-color:moccasin;
+    height: 10%;
+    background-color: #FFDFDE;
     text-align: center;
 }
 #title {
     width: 50%;
     height: 100%;
     margin: 0 auto;
-    padding: 25px;
+    padding: 10px;
     text-align: center;
     font-size: 50px;
 }

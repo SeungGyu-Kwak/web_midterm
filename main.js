@@ -34,3 +34,6 @@ function Question() {
 function Info(){
     alert('이 사이트는 커플들의 일정을 관리해주기 위한 사이트입니다.')
 }
+
+
+

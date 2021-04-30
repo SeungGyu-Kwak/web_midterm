@@ -1,0 +1,176 @@
+html, body{
+    background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+/* 부모태그들을 모두 100%으로 준다. */
+body,html, div {
+    width: 100%;
+    height: 100%;
+    /* background-color: white; */
+}
+
+div #wrapper {
+    width: 100%;
+    /* height: 100%; */
+    text-align: center;
+    margin: 0 auto;
+    border: 4px solid rgba(161, 161, 161, 0.5); 
+
+}
+section {
+    width: 100%;
+    height: 95%;
+    background-color:peru;
+    text-align: center;
+}
+div.calendar-album {
+    width: 100%; 
+    box-sizing: border-box;
+    background-color:peru;
+    /* border: 1px solid black; */
+    display: inline-block;
+} 
+
+#calendar {
+    width : 100%;
+    height: 100%;
+    text-align:left;
+    margin: 0 auto; 
+    font-size: 15px;
+    font-weight: bold;
+    /* padding: auto; */
+}
+#preCalendar,#nextCalendar {
+    cursor: pointer;
+}
+table,tr,td {
+    padding: auto;
+    border : 1px solid black;
+    border-collapse: collapse;
+    /* cursor: pointer; */
+}
+tr, td {
+    width: 10%;
+    height: 10%;
+    overflow: hidden;
+    
+}
+.calendar_schema {
+    text-align: center;
+}
+/* td > img {
+    max-width: 100%; 
+    padding: 0px;
+    /* height: auto; 
+    width:99%;
+    /* display:block;  
+    object-fit: cover;
+    /* text-align: center; 
+    margin: 0; 
+ }  */
+div.key{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    /* padding: 20px 0 0 0; */
+    border-radius: 25%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding:0px;
+    background-size: 100% 100%;
+}
+
+ .key > img {
+    width:100%; 
+    height:100%;
+    border:0px; 
+    display:block; 
+    object-fit: cover;
+    text-align: center;
+    margin: auto;
+    opacity: 0.8;
+}
+.active{
+    background: #0b0809;
+    border-radius: 50%;
+    color: #ffffff;
+    /* background:  url("man.jpeg"); */
+  }
+.sun{
+    color:#ef3333;
+}
+.sat{
+    color:#2107e0;
+}
+header,nav, footer {
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background-color:moccasin;
+    text-align: center;
+}
+#title {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    font-size: 50px;
+}
+#menu {
+    width: 100%;
+} 
+ul.ul-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+ul.ul-menu:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.ul-menu > li a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+/* 마우스 올리면 색깔이 변하도록하기 */
+.ul-menu > li a:hover {
+    background-color:#4CAF50;
+}
+
+footer {
+    height: 5%;
+    background-color: coral;
+    position: relative;
+    clear: both; /*clear:both하면 밑으로 내려감*/
+}
+.ul-footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+footer > ul {
+    overflow: hidden;
+}
+footer > ul > li {
+    float: left;
+    padding : 0 20px 0 0;
+}
