@@ -16,19 +16,6 @@ var tdGroup = []; //month의 날짜들을 담을 배열 객체 생성
 var keyValue;  //오늘의 날짜를 키 값으로 준다.
 var key;
 
-
-//todo 리스트 만들기
-
-// var inputBox = document.getElementById('input-data'); //id가 input-data인 것을 inputBox객체에 저장 
-// var inputDate = document.getElementById('input-button');
-// var inputList = document.getElementById('input-list');
-// var delText = 'X';
-// inputDate.addEventListener('click',addTodoList); //inputDate(버튼)를 클릭하면 addTodoList함수 실행
-// var dataCnt = 1;
-// var keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate(); //오늘의 날짜를 키 값으로 준다. 
-// var todoList = []; //todoList 배열 생성
-// todoList[keyValue] = [];
-
 function showCalendar(){ //달력 출력 메소드 
     var firstMonth = new Date(today.getFullYear(), today.getMonth(),1); //이번(현재) 달의 첫째 날 객체 생성 후 first에 저장
     currentTitle.innerHTML = firstMonth.getFullYear()+"년"+ '&nbsp;&nbsp;&nbsp;&nbsp'+ monthList[firstMonth.getMonth()];
@@ -58,11 +45,6 @@ function showCalendar(){ //달력 출력 메소드
                 $td.setAttribute('id', key);   //td id 속성에 cnt 넣어준다.          
                 $tr.appendChild($td); // <tr><td></td><tr>처럼 tr태그안에 td태그를 자식태그로 한다.
 
-                // //오늘 날짜 체크
-                // if (firstMonth.getFullYear()==realToday.getFullYear()&&firstMonth.getMonth()==realToday.getMonth()&& cnt == realToday.getDate())
-                // {
-                //     $td.classList.add('today-day');
-                // }
                 //일요일 빨간색으로 체크 
                 if (j == 0) 
                     $td.innerHTML = '<font color="red">' + cnt + '</font>';
@@ -71,7 +53,7 @@ function showCalendar(){ //달력 출력 메소드
                 {
                     
                     $td.innerHTML = '<font color="blue">' + cnt + '</font>';
-                    // $td.innerHTML = '<img src = "man.jpeg" width = "100%" height = "100%">';
+                   
                 }
                 cnt++; //날짜 올려준다.
             }
@@ -79,11 +61,7 @@ function showCalendar(){ //달력 출력 메소드
         monthCnt++;
         calendarBody.appendChild($tr); //calendarBody에 자식태그를 추가한다. 즉, 한 주<tr>씩 추가한다. 
     }
-    //현재 출력되는 달의 모든 날짜에 click이벤트 걸어주기
-    // for(let i = 1; i <= pageYear[today.getMonth()]; i++){ //현재 달의 1일부터 그 달의 마지막 날까지 for문 돌기
-    //     tdGroup[i] = document.getElementById(i); //배열안에는 id=i 를 가진 것이 들어감.
-    //     tdGroup[i].addEventListener('click',changeToday); //모든 날짜에 click이라는 이벤트가 실행될 때마다 changeToday함수 실행.
-    // }
+
   
 }
 
@@ -157,6 +135,18 @@ function inputAlbum(){
         div19.innerHTML = '<img src = "picture/0219.jpeg">';
         tdGroup[21220].appendChild(div20);
         div20.innerHTML = '<img src = "picture/0220.jpeg">';
+        tdGroup[21211].appendChild(div11);
+        div11.innerHTML = '<img src = "picture/0211.jpeg">';
+        tdGroup[21212].appendChild(div12);
+        div12.innerHTML = '<img src = "picture/0212.jpeg">';
+        tdGroup[21213].appendChild(div13);
+        div13.innerHTML = '<img src = "picture/0213.jpeg">';
+        tdGroup[21214].appendChild(div14);
+        div14.innerHTML = '<img src = "picture/0214.jpeg">';
+        tdGroup[21218].appendChild(div18);
+        div18.innerHTML = '<img src = "picture/0218.jpeg">';
+        tdGroup[21221].appendChild(div21);
+        div21.innerHTML = '<img src = "picture/0221.jpeg">';
     }
     else if (today.getMonth()+1 == 3) {
         tdGroup[2131].appendChild(div1);
@@ -225,12 +215,28 @@ function inputAlbum(){
         div14.innerHTML = '<img src = "picture/0414.jpeg">';
         tdGroup[21415].appendChild(div15);
         div15.innerHTML = '<img src = "picture/0415.jpeg">';
+        tdGroup[21416].appendChild(div16);
+        div16.innerHTML = '<img src = "picture/0416.jpeg">';
+        tdGroup[21417].appendChild(div17);
+        div17.innerHTML = '<img src = "picture/0417.jpeg">';
         tdGroup[21420].appendChild(div20);
         div20.innerHTML = '<img src = "picture/0420.jpeg">';
         tdGroup[21422].appendChild(div22);
         div22.innerHTML = '<img src = "picture/0422.jpeg">';
+        tdGroup[21425].appendChild(div25);
+        div25.innerHTML = '<img src = "picture/0425.jpeg">';
+        tdGroup[21426].appendChild(div26);
+        div26.innerHTML = '<img src = "picture/0426.jpeg">';
     }
     else if (today.getMonth()+1 == 5) {
+        tdGroup[2151].appendChild(div1);
+        div1.innerHTML = '<img src = "picture/0501.jpeg">';
+        tdGroup[2152].appendChild(div2);
+        div2.innerHTML = '<img src = "picture/0502.jpeg">';
+        tdGroup[2153].appendChild(div3);
+        div3.innerHTML = '<img src = "picture/0503.jpeg">';
+        tdGroup[2154].appendChild(div4);
+        div4.innerHTML = '<img src = "picture/0504.jpeg">';
     }
     else if (today.getMonth()+1 == 6) {  
     }
@@ -249,19 +255,6 @@ function inputAlbum(){
     
 }
 
-
-// //날짜 클릭하면 동그래지는 메소드 
-// function changeToday(e){
-//     for(var i = 1; i <= pageYear[today.getMonth()]; i++){  //현재 달의 1일부터 그 달의 마지막 날까지 for문 돌기
-//         if(tdGroup[i].classList.contains('active')){ //각 날짜에 class가 active값이 있는지 체크 (true/false)
-//             tdGroup[i].classList.remove('active'); //class='active'가 있다면 class 제거함. 
-//         }
-//     }
-//     clickedDate = e.currentTarget; //현재 클릭한 날짜(e.currentTarget)를 clickDate변수에 저장. 
-//     clickedDate.classList.add('active');// 현재 클릭한 날짜의 class에 active 추가
-//     clickedDate.innerHTML = '<img src = "man.jpeg" width = "100" height = "100%">';
-//     today = new Date(today.getFullYear(), today.getMonth(), clickedDate.id); //현재 눌린 날을 today에 저장. 
-// }
 
 //현재 출력된 달력을 지워주는 메소드
 function removeCalendar(){ 
@@ -290,10 +283,6 @@ function nextCalendar(){
     showCalendar(); 
     inputAlbum();
 }
-
-
-
-
 
 
 

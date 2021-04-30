@@ -24,13 +24,13 @@ div #wrapper {
 section {
     width: 100%;
     height: 95%;
-    background-color:peru;
+    background-color:#F5C7B8;
     text-align: center;
 }
 div.calendar-album {
     width: 100%; 
     box-sizing: border-box;
-    background-color:peru;
+    background-color:#F5C7B8;
     /* border: 1px solid black; */
     display: inline-block;
 } 
@@ -115,14 +115,14 @@ header,nav, footer {
 header {
     width: 100%;
     height: 10%;
-    background-color:moccasin;
+    background-color:#FFDFDE;
     text-align: center;
 }
 #title {
     width: 50%;
     height: 100%;
     margin: 0 auto;
-    padding: 25px;
+    padding: 10px;
     text-align: center;
     font-size: 50px;
 }
@@ -158,7 +158,7 @@ ul.ul-menu:after {
 
 footer {
     height: 5%;
-    background-color: coral;
+    background-color: #FFDFDE;
     position: relative;
     clear: both; /*clear:both하면 밑으로 내려감*/
 }

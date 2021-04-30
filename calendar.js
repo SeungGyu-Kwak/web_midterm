@@ -19,7 +19,6 @@ var tdGroup = []; //month의 날짜들을 담을 배열 객체 생성
 var inputBox = document.getElementById('input-data'); //id가 input-data인 것을 inputBox객체에 저장 
 var inputDate = document.getElementById('input-button');
 var inputList = document.getElementById('input-list');
-var delText = 'X';
 inputDate.addEventListener('click',addTodoList); //inputDate(버튼)를 클릭하면 addTodoList함수 실행
 var dataCnt = 1;
 var keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate(); //오늘의 날짜를 키 값으로 준다. 
@@ -83,11 +82,6 @@ showMain();
 reshowingList();
 
 
-
-// clickedDate = document.getElementById(today.getDate());
-// clickedDate.classList.add('active');
-//
-
 //현재 출력된 달력을 지워주는 메소드
 function removeCalendar(){ 
     let catchTr = 100;
@@ -143,6 +137,7 @@ function nextCalendar(){
     clickedDate = document.getElementById(today.getDate());
     clickedDate.classList.add('active');
     showMain();
+    
     reshowingList();
    
 }
@@ -170,28 +165,17 @@ function changeToday(e){
 
 
 dataCnt = 1
+var key;
 //todoList에 할일 추가하는 메소드 
 function addTodoList(){
     var $div = document.createElement('div'); //div 태그 생성
-    $div.textContent = '-' + inputBox.value; //div태그에 input태그에 적은 내용 추가
-    var $btn = document.createElement('button'); //$btn 객체 생성
-    $btn.setAttribute('type', 'button'); //$btn type에 type=button추가
-    $btn.setAttribute('id', 'del-ata'); //$btn id에 id= del-ata추가 
-    $btn.setAttribute('id', dataCnt+keyValue); // $btn id에 dataCnt+keyValue 추가 
-    $btn.setAttribute('class', "del-data"); //$btn class에 class = del-data 추가.
-    $btn.textContent = delText; //$btn에 delText = X 넣어준다. 즉, 버튼(X)만든다는 것. 
+    $div.textContent = '- ' + inputBox.value; //div태그에 input태그에 적은 내용 추가
     $div.setAttribute('id', dataCnt+keyValue);
     inputList.appendChild($div); //inputList에(할일 리스트)에 div태그 추가
-    inputList.appendChild($btn); //inputList에 btn태그 추가. 
     todoList[keyValue].push(inputBox.value); //todoList[keyValue]에 현재 적은 할일 추가한다. 
     dataCnt++; 
     inputBox.value = ''; //다시 inputBox에 공백으로 바꿔준다. 
     $div.addEventListener('click',checkList); //div를 클릭하면 checkList함수 실행 
-    $btn.addEventListener('click',deleteTodo); //btn를 클릭하면 deleteTodo함수 실행
-    function deleteTodo(){
-        $div.remove();
-        $btn.remove();
-    }
 }
 
 
@@ -199,9 +183,8 @@ function addTodoList(){
 //현재 업데이트된 날짜의 todo리스트를 출력해주는 메소드
 function reshowingList(){
     dataCnt = 1;
+   
     keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate(); //keyValue값 설정 
-
-    //keyValue값을 인덱스로 하는 배열이 값이 없다면.
     if(todoList[keyValue] === undefined){
         inputList.textContent = '';
         todoList[keyValue] = [];
@@ -210,12 +193,9 @@ function reshowingList(){
         $divs.forEach(function(e){
           e.remove();
         });
-        const $btns = document.querySelectorAll('#input-list > button');
-        $btns.forEach(function(e1){
-          e1.remove();
-        });
     }else if(todoList[keyValue].length ===0){
         inputList.textContent = '';
+        todoList[keyValue] = [];
         const $divs = document.querySelectorAll('#input-list > div');
         $divs.forEach(function(e){
           e.remove();
@@ -237,24 +217,11 @@ function reshowingList(){
         var $div = document.createElement('div'); //div태그 생성. 
         for(var i = 0; i < todoList[keyValue].length; i++){
             var $div = document.createElement('div'); //div태그 생성. 
-            $div.textContent = '-' + todoList[keyValue][i];
-            var $btn = document.createElement('button');
-            $btn.setAttribute('type', 'button'); 
-            $btn.setAttribute('id', 'del-ata');
-            $btn.setAttribute('id', dataCnt+keyValue);
-            $div.setAttribute('id', dataCnt+keyValue);
-            $btn.setAttribute('class', 'del-data');
-            $btn.textContent = delText;
+            $div.textContent = '- ' + todoList[keyValue][i];
             inputList.appendChild($div);
-            inputList.appendChild($btn);
             $div.addEventListener('click',checkList);
-            $btn.addEventListener('click',deleteTodo);
             inputBox.value = '';
             dataCnt++; 
-            function deleteTodo(){
-                $div.remove();
-                $btn.remove();
-            }
         }
     }
 }
